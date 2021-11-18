@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Form, Input, Alert } from "antd";
 import CustomButton from "../CustomButton";
 import classes from "./styles.module.scss";
@@ -32,14 +32,14 @@ const CountryForm = ({ data, handleClose, isEdit, form }) => {
       // reset fields if the form is add country
       form.resetFields();
     }
-  }, [data, isEdit]);
+  }, [data, isEdit, form]);
 
   // close the modal if the edit or add is success
   useEffect(() => {
     if (countriesSuccess) {
       handleClose();
     }
-  }, [countriesSuccess]);
+  }, [countriesSuccess, handleClose]);
 
   const onFinish = (values) => {
     if (isEdit) {
@@ -102,7 +102,7 @@ const CountryForm = ({ data, handleClose, isEdit, form }) => {
         name="countryFlag"
         rules={validationRules.countryFlag}
       >
-        <Input type="text" id="countryFlag" type="url" />
+        <Input id="countryFlag" type="url" />
       </Form.Item>
       {/* region*/}
       <Form.Item

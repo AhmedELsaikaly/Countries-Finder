@@ -27,20 +27,20 @@ export const generateCountryData = ({
 // validate the country object before submit it
 export const checkCountryData = (countries, payload) => {
   // check the flag (id) id existed
-  const isFlagExist = countries.find((item) => item.flag === payload.flag);
+  const isFlagExist = countries?.find((item) => item?.flag === payload?.flag);
   if (isFlagExist) {
     throw new Error("This Country Is Already Exist ..!");
   }
   // check if the country name is existed
   const isCountryExist = countries.find(
-    (item) => item.name.common === payload.CountryName
+    (item) => item?.name?.common === payload?.CountryName
   );
   if (isCountryExist) {
     throw new Error("This Country Name Is Already Exist ..!");
   }
   // check if the capital name is existed
   const isCapitalExist = countries.find(
-    (item) => item.capital[0] === payload.capital
+    (item) => item?.capital?.[0] === payload?.capital
   );
   if (isCapitalExist) {
     throw new Error("This capital name Is Already Exist ..!");
