@@ -1,0 +1,35 @@
+@import "../../styles/mixins";
+.map-modal {
+  .ant-modal-body {
+    height: 400px;
+  }
+  .ant-modal-title {
+    font-size: var(--font-25);
+  }
+}
+
+.add-btn-cont {
+  text-align: right;
+  margin-bottom: 20px;
+  @include md {
+    text-align: center;
+    button {
+      padding: 2px 50px 5px;
+    }
+  }
+}
+.countries-table {
+  .ant-table-cell {
+    text-align: center;
+  }
+  .ant-table-tbody > tr > td {
+    @include md {
+      padding: 10px 15px;
+    }
+  }
+  .ant-pagination-item {
+    @include xs {
+      margin-right: 2px;
+    }
+  }
+}

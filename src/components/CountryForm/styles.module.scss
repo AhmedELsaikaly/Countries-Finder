@@ -1,0 +1,26 @@
+@import "../../styles/variables";
+.customInput {
+  position: relative;
+  input {
+    transition: all var(--transition-200) ease-in;
+    height: 50px;
+    margin-right: 10px;
+    border: 1px dashed var(--gray-light-color);
+    border-radius: 40px;
+    font-size: var(--font-20);
+    text-indent: 17px;
+    line-height: 40px;
+    vertical-align: middle;
+    font-family: "Oswald", sans-serif;
+    &::placeholder {
+      color: var(--gray-light-color);
+    }
+  }
+}
+
+.submitBtnWrap {
+  text-align: center;
+  button {
+    margin-top: 10px;
+  }
+}

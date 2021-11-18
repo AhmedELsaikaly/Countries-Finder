@@ -1,0 +1,10 @@
+@import "../../styles/mixins";
+.countryFlag {
+  object-fit: cover;
+  width: 200px;
+  height: 90px;
+  @include md {
+    width: 100px;
+    height: 50px;
+  }
+}
