@@ -17,6 +17,8 @@ Ahmed ELsaikaly
 
 ## Usage
 
+[deployed Link](https://countries-test.netlify.app/)
+
 > Some usage instructions:
 
 App Configuration
