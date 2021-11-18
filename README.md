@@ -19,6 +19,12 @@ Ahmed ELsaikaly
 
 > Some usage instructions:
 
+App Configuration
+
+```env
+    REACT_APP_GOOGLE_MAPS_API = // this environment variable for google maps api key
+```
+
 > To start the project you need to:
 > in the root directory terminal:
 
@@ -123,13 +129,13 @@ countries-finder
 
 ## Dependencies
 
-- axios
-- @craco/craco
-- @react-google-maps/api
-- @reduxjs/toolkit
-- antd
-- node-sass
-- react-loading-skeleton
-- react-dom
-- react-redux
-- react-router-dom
+- [axios](https://www.npmjs.com/package/axios)
+- [@craco/craco](https://www.npmjs.com/package/@craco/craco)
+- [@react-google-maps/api](https://www.npmjs.com/package/@react-google-maps/api)
+- [@reduxjs/toolkit](https://www.npmjs.com/package/@reduxjs/toolkit)
+- [antd](https://www.npmjs.com/package/antd)
+- [node-sass](https://www.npmjs.com/package/node-sass)
+- [react-loading-skeleton](https://www.npmjs.com/package/react-loading-skeleton)
+- [react-dom](https://www.npmjs.com/package/react-dom)
+- [react-redux](https://www.npmjs.com/package/react-redux)
+- [react-router-dom](https://www.npmjs.com/package/react-router-dom)

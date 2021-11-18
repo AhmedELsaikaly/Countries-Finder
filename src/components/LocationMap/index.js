@@ -35,14 +35,8 @@ const PositionMap = ({ position, countryName }) => {
   }, []);
 
   // check the value of position
-  if (
-    position?.lat < -90 ||
-    position?.lat > 90 ||
-    position?.lng < -180 ||
-    position?.lng > 180 ||
-    !position?.lng ||
-    !position?.lat
-  ) {
+  const { lat, lng } = position;
+  if (!lat || !lng || lat < -90 || lat > 90 || lng < -180 || lng > 180) {
     return (
       <div className={classes.errorCont}>
         <h4>There is an error in position attributes</h4>
@@ -78,7 +72,7 @@ const PositionMap = ({ position, countryName }) => {
           )}
         </GoogleMap>
       ) : (
-        <Skeleton height={"100%"} width={"100%"} />
+        <Skeleton height="100%" width="100%" />
       )}
     </div>
   );
