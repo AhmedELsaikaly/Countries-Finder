@@ -1,5 +1,6 @@
 import { Spin } from "antd";
 import { LoadingOutlined } from "@ant-design/icons";
+
 import classes from "./styles.module.scss";
 
 const LoadingSuspense = () => {

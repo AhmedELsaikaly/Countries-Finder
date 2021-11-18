@@ -1,5 +1,7 @@
 import { Modal } from "antd";
+
 import "./styles.scss";
+
 const ModalComponent = ({
   isModalVisible,
   handleOk,

@@ -26,7 +26,7 @@ export const capitalName = [
 export const countryFlag = [
   requiredValidation,
   {
-    pattern: /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png)/g,
+    pattern: /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png|svg)/g,
     message: validationMessage("Country Flag url"),
   },
 ];

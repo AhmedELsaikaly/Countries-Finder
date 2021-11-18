@@ -1,4 +1,4 @@
-export const getCountriesState = (state) => state.countries.countries;
-export const getCountriesLoading = (state) => state.countries.loading;
-export const getCountriesError = (state) => state.countries.error;
-export const getCountriesSuccess = (state) => state.countries.success;
+export const getCountriesState = ({ countries }) => countries.countries;
+export const getCountriesLoading = ({ countries }) => countries.loading;
+export const getCountriesError = ({ countries }) => countries.error;
+export const getCountriesSuccess = ({ countries }) => countries.success;

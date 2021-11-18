@@ -1,14 +1,16 @@
 import { useEffect } from "react";
 import { Form, Input, Alert } from "antd";
+import { useDispatch, useSelector } from "react-redux";
+
 import CustomButton from "../CustomButton";
-import classes from "./styles.module.scss";
 import * as validationRules from "../../constants/validationRules";
 import { editCountry, addCountry } from "../../redux/slices/countriesSlice";
 import {
   getCountriesSuccess,
   getCountriesError,
 } from "../../redux/selectors/countries";
-import { useDispatch, useSelector } from "react-redux";
+
+import classes from "./styles.module.scss";
 
 const CountryForm = ({ data, handleClose, isEdit, form }) => {
   const dispatch = useDispatch();

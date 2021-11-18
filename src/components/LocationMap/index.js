@@ -5,8 +5,9 @@ import {
   Marker,
   InfoWindow,
 } from "@react-google-maps/api";
-import classes from "./styles.module.scss";
 import Skeleton from "react-loading-skeleton";
+
+import classes from "./styles.module.scss";
 import "./styles.scss";
 
 // libraries const in google MAP

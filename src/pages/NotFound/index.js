@@ -1,4 +1,5 @@
 import { Result } from "antd";
+
 import classes from "./styles.module.scss";
 
 const NotFound = () => {

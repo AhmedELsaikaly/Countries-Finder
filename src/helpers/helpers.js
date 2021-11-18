@@ -25,36 +25,42 @@ export const generateCountryData = ({
 };
 
 // validate the country object before submit it
-export const checkCountryData = (countries, payload) => {
-  // check the flag (id) id existed
-  const isFlagExist = countries?.find((item) => item?.flag === payload?.flag);
-  if (isFlagExist) {
-    throw new Error("This Country Is Already Exist ..!");
-  }
-  // check if the country name is existed
-  const isCountryExist = countries.find(
-    (item) => item?.name?.common === payload?.CountryName
+export const checkCountryData = (countries, payload, isEdit) => {
+  let errorMessage = null;
+  countries?.forEach(
+    ({ flag, name: { common } = {}, capital: [capitalName] = [] } = {}) => {
+      if (!isEdit || flag !== payload?.flag) {
+        if (flag === payload?.flag) {
+          // check the flag (id) existed
+          return (errorMessage = "This Country Is Already Exist ..!");
+        }
+        // check if the country name is existed
+        if (common?.toLowerCase() === payload?.CountryName?.toLowerCase()) {
+          return (errorMessage = "This Country Name Is Already Exist ..!");
+        }
+        // check if the capital name is existed
+        if (capitalName?.toLowerCase() === payload?.capital?.toLowerCase()) {
+          return (errorMessage = "This capital name Is Already Exist ..!");
+        }
+      }
+    }
   );
-  if (isCountryExist) {
-    throw new Error("This Country Name Is Already Exist ..!");
-  }
-  // check if the capital name is existed
-  const isCapitalExist = countries.find(
-    (item) => item?.capital?.[0] === payload?.capital
-  );
-  if (isCapitalExist) {
-    throw new Error("This capital name Is Already Exist ..!");
-  }
+
+  if (errorMessage) throw new Error(errorMessage);
 };
 
 // update country object before add it to countries array
 export const updateObject = (data, payload) => {
-  const newCountry = data;
-  newCountry.name.common = payload.CountryName;
-  newCountry.capital[0] = payload.capital;
-  newCountry.flags.svg = payload.countryFlag;
-  newCountry.region = payload.region;
-  newCountry.population = payload.population;
-  newCountry.latlng = [+payload.lat, +payload.lng];
-  return newCountry;
+  const { CountryName, capital, countryFlag, region, lat, lng, population } =
+    payload;
+
+  return {
+    ...data,
+    name: { common: CountryName },
+    flags: { svg: countryFlag },
+    capital: [capital],
+    population,
+    latlng: [+lat, +lng],
+    region,
+  };
 };

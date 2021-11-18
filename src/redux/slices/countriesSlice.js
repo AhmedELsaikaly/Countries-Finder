@@ -37,6 +37,7 @@ export const countriesSlice = createSlice({
         if (objIndex === -1) {
           throw new Error("This Country Is Not Exist ..!");
         }
+        checkCountryData(state.countries, payload, true);
         // update country data before change the countries array
         newCountries[objIndex] = updateObject(newCountries[objIndex], payload);
         state.countries = newCountries;

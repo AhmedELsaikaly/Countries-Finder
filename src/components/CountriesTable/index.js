@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import Container from "../Container";
 import { Table, Button, Form } from "antd";
 import { useSelector, useDispatch } from "react-redux";
+
+import Container from "../Container";
 import CountryFlag from "../CountryFlag/index";
 import {
   getCountriesState,
@@ -13,6 +14,7 @@ import CustomButton from "../CustomButton";
 import PositionMap from "../LocationMap";
 import ModalComponent from "../Modal";
 import CountryForm from "../CountryForm";
+
 import "./styles.scss";
 
 const CountriesTable = () => {
@@ -165,6 +167,7 @@ const CountriesTable = () => {
         loading={loading}
         bordered
         scroll={{ x: true }}
+        rowKey="flag"
       />
     </Container>
   );

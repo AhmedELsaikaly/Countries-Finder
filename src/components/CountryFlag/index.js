@@ -1,5 +1,7 @@
 import { Image } from "antd";
+
 import classes from "./styles.module.scss";
+
 const CountryFlag = (props) => {
   return (
     <Image
